@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: clickbaixo
+    env: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: NO_DEMO
+        value: "1"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DATA_DIR
+        value: /app/data
+    disk:
+      name: clickbaixo-data
+      mountPath: /app/data
+      sizeGB: 1

@@ -1,0 +1,25 @@
+app = "clickbaixo"
+primary_region = "gru"
+
+[build]
+
+[env]
+  PORT = "3000"
+  NO_DEMO = "1"
+  TRUST_PROXY = "1"
+  DATA_DIR = "/app/data"
+
+[[mounts]]
+  source = "clickbaixo_data"
+  destination = "/app/data"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+
+[[http_service.checks]]
+  path = "/health"
+  interval = "30s"
+  timeout = "5s"

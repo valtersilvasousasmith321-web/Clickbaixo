@@ -1,0 +1,14 @@
+{
+  "name": "clickbaixo",
+  "version": "1.0.0",
+  "description": "Site de ofertas e cupons com afiliado Amazon, painel admin e alertas de preço por e-mail.",
+  "main": "server.js",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --env-file-if-exists=.env --watch server.js",
+    "test": "node scripts/smoke.js"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
